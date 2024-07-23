@@ -3,7 +3,8 @@ const bodyParser=require('body-parser');
 
 const {PORT}=require('./config/serverConfig');
 
-const {sendBasicEmail}=require('./services/email-service');
+// const {sendBasicEmail}=require('./services/email-service');
+const cron= require('node-cron');
 
 const setupAndStartServer=()=>{
     const app=express();
@@ -19,6 +20,9 @@ const setupAndStartServer=()=>{
     //     'This is a testing email',
     //     'Hey, how are you, I hope you like the support'
     // );
+    // cron.schedule('*/1 * * * *',()=>{
+    //     console.log("Hello");
+    // });
 }
 
 setupAndStartServer();
